@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS project
 );
 
 -- Create the table for many-to-many relationship between workers and projects
-CREATE TABLE  project_worker
+CREATE TABLE IF NOT EXISTS project_worker
 (
     project_id INTEGER NOT NULL REFERENCES project (id) ON DELETE CASCADE,
     worker_id  INTEGER NOT NULL REFERENCES worker (id) ON DELETE CASCADE,
